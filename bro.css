@@ -1,0 +1,97 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0fdfa 100%);
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+header {
+    background: #6366f1;
+    color: #fff;
+    padding: 2rem 0 1rem 0;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.1);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin: 0.5rem 0 1rem 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+nav a {
+    color: #fff;
+    background: #818cf8;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover {
+    background: #fbbf24;
+    color: #222;
+}
+
+section {
+    background: #fff;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(99,102,241,0.08);
+}
+
+section h2 {
+    color: #6366f1;
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 1.2rem;
+}
+
+.img-lehma{
+    display: block;
+    margin: 1.5rem auto;
+    width: 700px;
+    height: 300px;
+    
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(99,102,241,0.13);
+}
+.img-rizzgod{
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgba(108, 89, 211, 0.838);
+}
+
+@media (max-width: 700px) {
+    section {
+        padding: 1rem;
+        max-width: 95vw;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
