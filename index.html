@@ -1,119 +1,108 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
-   
     <title>Lasse</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <style>
-    body {
-        background-color: rgb(255, 255, 255);
-        font-family:  Arial, Helvetica, sans-serif;
-        margin: auto;
-        padding: 0;
-        text-align: center;
-       
-
-
-    }
-    header {
-        background-color: rgb(122, 99, 61);
-        
-        color: rgb(0, 0, 0);
-        padding: 40px 20px;
-        text-align: center;
-
-    }
-    nav {
-        text-align: center;
-        
-        padding: 10px 0;
-        
-    }
-    nav a {
-        color: rgb(8, 0, 253);
-        font-size: 18px;
-        font-weight: bold;
-        padding: 10px;
-    }
-    img{
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 5px solid rgba(179, 130, 9, 0.838);
-        margin: 20px;
-    }
-
-
-  </style>
-   
+    <link rel="stylesheet" href="bro.css">
 </head>
+
 <body>
-    
-    
+
     <header>
-    <!---Otsikot-->
-    <h1 align="Center">Lasse Lappeteläinen</h1>
-    <p align="Center"> Asiallinen | Työtön</p>
-    <nav>
-    <!--navigointi--->
-
-    <a href="#minä">Tietoa minusta</a>
-   
-    <a href="#minä">Taidot</a>
-    
-    <a href="#minä">Työkokemus</a>
-    
-    <a href="#minä">Koulutus</a>
-    
-
-
-<sections>
-
-
-</ul>
-</sectios>
-
-
-
-
-
-
-    </nav>
+        <h1 align="center">Lasse Lappeteläinen</h1>
+        <p align="center"> Asiallinen | Työtön</p>
+        <nav>
+            <a href="#minusta">Tietoa minusta</a>
+            <a href="#taidot">Taidot</a>
+            <a href="#tyokokemus">Työkokemus</a>
+            <a href="#koulutus">Koulutus</a>
+        </nav>
     </header>
-    <sections>
+    <section id="minusta">
         <h2>Tietoja minusta</h2>
-        <img src="rizzgod.jpg">
-    
-        <p>Olen Lasse, työtön opiskelija.</p>
-    </sections>
-    
-    <sections id="taidot" >
+        <img src="rizzgod.jpg" class="img-rizzgod">
+        <p>Olen Lasse, työtön opiskelija, kebab</p>
+    </section>
+
+    <img src="lehmä.jpg" class="img-lehma">
+
+    <section id="taidot" class="taidot">
+        <nav>
+            <a href="#minusta">Tietoa minusta</a>
+            <a href="#taidot">Taidot</a>
+            <a href="#tyokokemus">Työkokemus</a>
+            <a href="#koulutus">Koulutus</a>
+        </nav>
         <h2>Taidot</h2>
         <ul>
             <li>HTML, C#</li>
             <li>Fortnite</li>
         </ul>
-    
-    
-    </sections>
-    <sections id="Työkokemus" >
+        
+    </section>
+
+    <section id="tyokokemus" class="tyokokemus">
+                <nav>
+            <a href="#minusta">Tietoa minusta</a>
+            <a href="#taidot">Taidot</a>
+            <a href="#tyokokemus">Työkokemus</a>
+            <a href="#koulutus">Koulutus</a>
+        </nav>
         <h2>Työkokemus</h2>
         <ul>
-            <li><strong>KoneneliöOY, MarbouOY(ilman palkkaa)</strong></li>
-            <li></li>
+            <li>KoneneliöOY, <br> MarbouOY(ilman palkkaa) <br>Maatalous-alan työt yms.</li>
         </ul>
-    
-    
-    </sections>
-    <sectios id="koulutus">
+        
+        
+    </section>
+
+    <section id="koulutus" class="koulutus">
+                <nav>
+            <a href="#minusta">Tietoa minusta</a>
+            <a href="#taidot">Taidot</a>
+            <a href="#tyokokemus">Työkokemus</a>
+            <a href="#koulutus">Koulutus</a>
+        </nav>
         <h2>Koulutus</h2>
-    <ul>
-    <li>Savon ammattiopisto Tieto ja viestintä tekniikka</li>
+        <ul>
+            <li>Savon ammattiopisto Tieto ja viestintä tekniikka</li> <br>
+            <li>Peruskoulu</li>
+        </ul>
+    </section>
+    <br><br>
+    <script>
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').replace('#', '');
+            
+            document.querySelectorAll('section').forEach(sec => {
+                sec.style.display = 'none';
+            });
+            
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.style.display = '';
+            }
+            
+            document.body.style.transition = 'transform 0.6s';
+            document.body.style.transform = 'rotateY(360deg)';
+            setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth' });
+                document.body.style.transform = '';
+            }, 600);
+        });
+    });
 
-
-
-
+  // näkyy pelkästää se linkin aiheet mitä painetaan
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('section').forEach((sec, idx) => {
+            sec.style.display = idx === 0 ? '' : 'none';
+        });
+    });
+    </script>
 </body>
+
 </html>
