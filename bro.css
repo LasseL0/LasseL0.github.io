@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background: #6366f1;
+    background: #7422ef;
     color: #fff;
     padding: 2rem 0 1rem 0;
     box-shadow: 0 2px 8px rgba(99,102,241,0.1);
@@ -45,7 +45,7 @@ nav a {
 }
 
 nav a:hover {
-    background: #fbbf24;
+    background: #ac7bf1;
     color: #222;
 }
 
@@ -93,5 +93,23 @@ ul {
     }
     header h1 {
         font-size: 1.5rem;
+    }
+}
+@media (max-width: 500px) {
+    .img-lehma {
+        width: 95vw;
+        height: auto;
+        max-width: 100%;
+    }
+    .img-rizzgod {
+        width: 120px;
+        height: 120px;
+    }
+    nav {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+    section {
+        margin: 1rem 0.5rem;
     }
 }
