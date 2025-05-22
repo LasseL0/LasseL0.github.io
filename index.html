@@ -18,30 +18,30 @@
             <a href="#taidot">Taidot</a>
             <a href="#tyokokemus">Työkokemus</a>
             <a href="#koulutus">Koulutus</a>
-        </nav>
-    </header>
-    <section id="minusta">
-        <h2>Tietoja minusta</h2>
-        <img src="rizzgod.jpg" class="img-rizzgod">
-        <p>Olen Lasse, työtön opiskelija, kebab</p>
-    </section>
+        </header>
 
-    <img src="lehmä.jpg" class="img-lehma">
+        <section id="minusta">
+            <h2>Tietoja minusta</h2>
+            <img src="rizzgod.jpg" class="img-rizzgod">
+            <p>Olen Lasse, työtön opiskelija, kebab</p>
+        </section>
 
-    <section id="taidot" class="taidot">
-        <nav>
-            <a href="#minusta">Tietoa minusta</a>
-            <a href="#taidot">Taidot</a>
-            <a href="#tyokokemus">Työkokemus</a>
-            <a href="#koulutus">Koulutus</a>
-        </nav>
-        <h2>Taidot</h2>
-        <ul>
-            <li>HTML, C#</li>
-            <li>Fortnite</li>
-        </ul>
-        
-    </section>
+        <img src="lehmä.jpg" class="img-lehma">
+
+        <section id="taidot" class="taidot">
+            <nav>
+                <a href="#minusta">Tietoa minusta</a>
+                <a href="#taidot">Taidot</a>
+                <a href="#tyokokemus">Työkokemus</a>
+                <a href="#koulutus">Koulutus</a>
+            </nav>
+            <h2>Taidot</h2>
+            <ul>
+                <li>HTML, PHP</li>
+                <li>C#</li>
+                <li>Fortnite</li>
+            </ul>
+        </section>
 
     <section id="tyokokemus" class="tyokokemus">
                 <nav>
@@ -52,7 +52,10 @@
         </nav>
         <h2>Työkokemus</h2>
         <ul>
-            <li>KoneneliöOY, <br> MarbouOY(ilman palkkaa) <br>Maatalous-alan työt yms.</li>
+            <li>Koneneliö Oy, <br> <br></li>
+            <li>Marbou Oy(ilman palkkaa)</li>
+            <br>
+            <li>Maatalous-alan työt yms.</li>
         </ul>
         
         
@@ -72,37 +75,43 @@
         </ul>
     </section>
     <br><br>
+    <footer style="border-top: 1px solid #ccc; padding: 10px; text-align: center; color: #555; position: fixed; left: 0; bottom: 0; width: 100%; background: #fff; z-index: 100;">
+        Sivun tehnyt minä &copy; 2025
+    </footer>
     <script>
     document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').replace('#', '');
-            
+
             document.querySelectorAll('section').forEach(sec => {
                 sec.style.display = 'none';
             });
-            
-            const target = document.getElementById(targetId);
+
+            const target = document.getElementById(targetId);   
             if (target) {
                 target.style.display = '';
             }
-            
+
+            // pyörii vaa yhesti 360 astetta
             document.body.style.transition = 'transform 0.6s';
             document.body.style.transform = 'rotateY(360deg)';
             setTimeout(() => {
                 target.scrollIntoView({ behavior: 'smooth' });
+                document.body.style.transition = '';
                 document.body.style.transform = '';
             }, 600);
         });
     });
 
-  // näkyy pelkästää se linkin aiheet mitä painetaan
+    // näkyy pelkästää se linkin aiheet mitä painaa
     window.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('section').forEach((sec, idx) => {
             sec.style.display = idx === 0 ? '' : 'none';
         });
     });
     </script>
-</body>
+    
+    </body>
 
 </html>
